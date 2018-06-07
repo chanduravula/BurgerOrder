@@ -1,0 +1,20 @@
+package BurgerValidation {
+   rule NameValidator {
+      property ilog.rules.business_name = "NameValidator";
+      property ilog.rules.package_name = "BurgerValidation";
+      property status = "new";
+      when {
+         com.burger.OrderBurger() from myOrder;
+         evaluate ((myOrder.customerName.equals("Miracle")));
+      } then {
+         result = "Valid Name";
+         checkValue = java.lang.Boolean.valueOf(true);
+         ?context.updateContext();
+      } else {
+         result = "Sorry, Invalid Name Retry Again..!!";
+         checkValue = java.lang.Boolean.valueOf(false);
+         ?context.updateContext();
+      }
+   }
+}
+

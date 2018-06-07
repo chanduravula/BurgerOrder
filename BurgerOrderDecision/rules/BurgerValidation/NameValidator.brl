@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>NameValidator</name>
+  <uuid>38c2ace2-cf95-492f-adee-fab751d02be5</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+    the customer name of 'the burger order' is "Miracle" 
+then
+    set 'the final result' to "Valid Name" ;
+    set 'the check parameter' to true ; 
+else
+    set 'the final result' to "Sorry, Invalid Name Retry Again..!!" ;
+    set 'the check parameter' to false ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

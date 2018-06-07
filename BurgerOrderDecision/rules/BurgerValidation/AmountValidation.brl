@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>AmountValidation</name>
+  <uuid>17dad8fa-4f47-4a4b-9997-dab58219b6a2</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[If
+    'the burger order' is not null
+    and the rate of 'the burger order' is between 0 and 500
+then
+    set 'the final result' to "Valid Amount" ;
+else
+    set 'the final result' to "Invalid Amount..!" ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

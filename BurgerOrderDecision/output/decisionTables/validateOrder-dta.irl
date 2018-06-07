@@ -1,0 +1,82 @@
+// begin DT validateOrder
+// -- begin rule 'validateOrder 0'
+package decisionTables {
+   rule validateOrder_0 {
+      property ilog.rules.business_name = "validateOrder 1";
+      property ilog.rules.dt = "decisionTables.validateOrder";
+      property ilog.rules.group = "decisionTables.validateOrder";
+      property ilog.rules.package_name = "decisionTables";
+      property status = "new";
+      when {
+         com.burger.OrderBurger() from myOrder;
+         variable1: com.burger.OrderBurger() from myOrder;
+         evaluate (((variable1.rate < 1)));
+      } then {
+         result = "Invalid Rate for Size";
+         ?context.updateContext();
+      }
+   }
+}
+
+// -- end rule 'validateOrder 0'
+// -- begin rule 'validateOrder 1'
+package decisionTables {
+   rule validateOrder_1 {
+      property ilog.rules.business_name = "validateOrder 2";
+      property ilog.rules.dt = "decisionTables.validateOrder";
+      property ilog.rules.group = "decisionTables.validateOrder";
+      property ilog.rules.package_name = "decisionTables";
+      property status = "new";
+      when {
+         com.burger.OrderBurger() from myOrder;
+         variable1: com.burger.OrderBurger() from myOrder;
+         evaluate (((variable1.rate in ]1, 100])));
+      } then {
+         result = "Small Burger";
+         ?context.updateContext();
+      }
+   }
+}
+
+// -- end rule 'validateOrder 1'
+// -- begin rule 'validateOrder 3'
+package decisionTables {
+   rule validateOrder_3 {
+      property ilog.rules.business_name = "validateOrder 4";
+      property ilog.rules.dt = "decisionTables.validateOrder";
+      property ilog.rules.group = "decisionTables.validateOrder";
+      property ilog.rules.package_name = "decisionTables";
+      property status = "new";
+      when {
+         com.burger.OrderBurger() from myOrder;
+         variable1: com.burger.OrderBurger() from myOrder;
+         evaluate (((variable1.rate in [101, 200[)));
+      } then {
+         result = "Medium Burger";
+         ?context.updateContext();
+      }
+   }
+}
+
+// -- end rule 'validateOrder 3'
+// -- begin rule 'validateOrder 5'
+package decisionTables {
+   rule validateOrder_5 {
+      property ilog.rules.business_name = "validateOrder 6";
+      property ilog.rules.dt = "decisionTables.validateOrder";
+      property ilog.rules.group = "decisionTables.validateOrder";
+      property ilog.rules.package_name = "decisionTables";
+      property status = "new";
+      when {
+         com.burger.OrderBurger() from myOrder;
+         variable1: com.burger.OrderBurger() from myOrder;
+         evaluate (((variable1.rate in [201, 300])));
+      } then {
+         result = "Large Burger";
+         ?context.updateContext();
+      }
+   }
+}
+
+// -- end rule 'validateOrder 5'
+// end DT validateOrder

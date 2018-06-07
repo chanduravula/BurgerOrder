@@ -1,0 +1,19 @@
+package BurgerValidation {
+   rule AmountValidation {
+      property ilog.rules.business_name = "AmountValidation";
+      property ilog.rules.package_name = "BurgerValidation";
+      property status = "new";
+      when {
+         com.burger.OrderBurger() from myOrder;
+         evaluate ((myOrder != null
+         	&& myOrder.rate in [0, 500]));
+      } then {
+         result = "Valid Amount";
+         ?context.updateContext();
+      } else {
+         result = "Invalid Amount..!";
+         ?context.updateContext();
+      }
+   }
+}
+

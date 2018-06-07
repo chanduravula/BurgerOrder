@@ -1,0 +1,30 @@
+
+property loadGetterSetterAsProperties "true"
+property origin "xom:/BurgerOrderDecision//BurgerOrder"
+property uuid "29acd993-21f9-4aa5-888f-6ea758f043bf"
+package com.burger;
+
+
+public class ContextHelper
+{
+    public ContextHelper();
+    public static void setExceptionHandler(ilog.rules.engine.IlrContext arg);
+}
+
+public class MyExceptionHandler
+        extends ilog.rules.engine.IlrExceptionHandler
+{
+    public boolean handleException(ilog.rules.engine.IlrUserRuntimeException arg);
+}
+
+public class OrderBurger
+{
+    public string address;
+    public string customerName;
+    public int disc;
+    public string name;
+    public int rate;
+    public OrderBurger(string arg1, int arg2, int arg3, string arg4, string arg5);
+    public OrderBurger();
+}
+

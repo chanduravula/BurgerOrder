@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-deployment xmlns="http://www.ibm.com/rules/ruleproject/deployment" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <config serverURL="http://localhost:9080/res">
+        <xom>
+            <uri value="resuri://ibm-odm-decision-engine-rt-8.5.1.0.jar/1.0"/>
+            <uri value="resuri://ibm-odm-decision-engine-8.5.1.0.jar/1.0"/>
+            <uri value="resuri://BurgerOrder.zip/7.0"/>
+            <uri value="resuri://jrules-engine.jar/1.0"/>
+        </xom>
+    </config>
+</project-deployment>

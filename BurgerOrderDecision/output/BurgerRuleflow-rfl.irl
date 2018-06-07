@@ -1,0 +1,58 @@
+import com.burger.OrderBurger;
+import com.burger.ContextHelper;
+import com.burger.MyExceptionHandler;
+
+
+flowtask BurgerRuleflow {
+  property mainflowtask = true;
+  property ilog.rules.business_name = "BurgerRuleflow";
+  property ilog.rules.package_name = "";
+  body {
+    BurgerRuleflow#NameValidator;
+    if ((checkValue.booleanValue()) == (true)) {
+      BurgerRuleflow#AmountValidation;
+      BurgerRuleflow#validateOrder;
+    }
+  }
+};
+
+ruletask BurgerRuleflow#AmountValidation {
+  property ilog.rules.business_name = "BurgerRuleflow>AmountValidation";
+  property ilog.rules.package_name = "";
+  algorithm = sequential;
+  property ilog.rules.engine.sequential.fastpath = true;
+  ordering = sorted;
+  body {
+    BurgerValidation.AmountValidation
+  }
+};
+
+ruletask BurgerRuleflow#NameValidator {
+  property ilog.rules.business_name = "BurgerRuleflow>NameValidator";
+  property ilog.rules.package_name = "";
+  algorithm = default;
+  ordering = dynamic;
+  initialaction {
+    if (myOrder.customerName == null)
+    {
+    	ContextHelper.setExceptionHandler(context);
+    	
+    }
+
+  };
+  body {
+    BurgerValidation.NameValidator
+  }
+};
+
+ruletask BurgerRuleflow#validateOrder {
+  property ilog.rules.business_name = "BurgerRuleflow>validateOrder";
+  property ilog.rules.package_name = "";
+  algorithm = sequential;
+  property ilog.rules.engine.sequential.fastpath = true;
+  ordering = sorted;
+  body {
+    group("decisionTables.validateOrder")
+  }
+};
+

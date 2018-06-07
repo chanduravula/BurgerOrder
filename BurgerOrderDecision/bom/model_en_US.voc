@@ -1,0 +1,21 @@
+# Vocabulary Properties
+uuid = c517fe06-bf76-4dc2-8f02-3d5bdfe80369
+
+# com.burger.ContextHelper
+com.burger.ContextHelper#concept.label = context helper
+
+# com.burger.MyExceptionHandler
+com.burger.MyExceptionHandler#concept.label = my exception handler
+
+# com.burger.OrderBurger
+com.burger.OrderBurger#concept.label = order burger
+com.burger.OrderBurger.address#phrase.action = set the address of {this} to {address}
+com.burger.OrderBurger.address#phrase.navigation = {address} of {this}
+com.burger.OrderBurger.customerName#phrase.action = set the customer name of {this} to {customer name}
+com.burger.OrderBurger.customerName#phrase.navigation = {customer name} of {this}
+com.burger.OrderBurger.disc#phrase.action = set the disc of {this} to {disc}
+com.burger.OrderBurger.disc#phrase.navigation = {disc} of {this}
+com.burger.OrderBurger.name#phrase.action = set the name of {this} to {name}
+com.burger.OrderBurger.name#phrase.navigation = {name} of {this}
+com.burger.OrderBurger.rate#phrase.action = set the rate of {this} to {rate}
+com.burger.OrderBurger.rate#phrase.navigation = {rate} of {this}
